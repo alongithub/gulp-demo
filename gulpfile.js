@@ -84,7 +84,7 @@ const pagedata = {
 
 const page = () => {
     return src('src/**/*.html', {base: 'src'}) // src 下任意子目录下的任意html文件
-        .pipe(swig({data: pagedata}))
+        .pipe(swig({data: pagedata, defaults: { cache: false }}))
         .pipe(dest('temp'))
         .pipe(bs.reload({stream: true})) 
 }
